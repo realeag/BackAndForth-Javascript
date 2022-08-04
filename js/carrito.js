@@ -91,12 +91,13 @@ let valorFinal = 0;
 let subtotal = 0;
 let iva = 1.21;
 const drawCart = () => {
+    let valorFinal = 0;
     carritoHTML.className = "carrito";
     carritoHTML.innerHTML = "";
     if (carrito.length > 0) {
         carrito.forEach((producto, posicion) => {
             subtotal = producto.precio * producto.cantidad;
-            valorFinal = subtotal * iva;
+            valorFinal += subtotal * iva;
 
             const agregoCarrito = document.createElement("div");
             agregoCarrito.classList.add("prod-cart", "d-flex", "col-md-11", "col-lg-11", "mb-2");
