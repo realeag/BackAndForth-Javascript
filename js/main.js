@@ -9,7 +9,7 @@ fetch('js/productos.json')
         
 
         let div1 = document.createElement("div");
-        div1.classList = "card w-50 d-flex";
+        div1.classList = "card w-25 d-flex row";
         
         let div2 = document.createElement("div");
         div2.classList = "card-header m-2";
