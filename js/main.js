@@ -28,22 +28,3 @@ fetch('js/productos.json')
         api.appendChild(div1);
     });
 });
-
-
-/* fetch('https://api.jsonbin.io/v3/b/62e6cb4460c3536f3fcb7e76')
-.then((response) => response.json())
-.then((data) => {
-    const api = document.getElementById("api");
-    data.forEach(visual => {
-        let titulo = document.createElement("p");
-        let div1 = document.createElement("div");
-        div1.classList = "card col-md-12"
-        let div2 = document.createElement("div");
-        div2.className = "card-header"
-        titulo.innerText = `Comprá tus remeras vintage y pelotas en Back&Forth F.C.:`
-        div2.innerHTML = `${visual.imagen} <br> ${visual.nombre}`
-        parrafo.appendChild(div1);
-        div1.appendChild(div2);
-        api.appendChild(parrafo);
-    });
-}); */
