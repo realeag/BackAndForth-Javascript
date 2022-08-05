@@ -77,13 +77,25 @@ nav ul {
 }
 
 .titPrimario {
-    font-size: 32px;
+    font-size: 38px;
     margin-top: 1.5rem;
     margin-bottom: 3rem;
     display: flex;
     justify-content: center;
+    font-weight: 800;
 }
-
+.titSecundario{
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 2rem;
+}
+.titTerciario{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+}
 .adquiri {
     margin-bottom: 2rem;
 }
@@ -189,11 +201,12 @@ div label:hover {
     margin-bottom: 2rem;
     padding: 1rem;
     border: 2px solid black;
-    border-radius: 3px;
+    border-radius: 4px;
     width: 900px;
     position: relative;
     text-align: center;
     margin-left: 12%;
+    box-shadow:  3px 5px 5px rgb(80, 75, 75);
 }
 
 .carritoDetalles {
@@ -202,7 +215,14 @@ div label:hover {
     text-align: center;
     align-self: center;
 }
-
+.prod1{
+    color: #fd9804;
+    font-weight: 700;
+}
+.subtotal1{
+    color: rgb(117, 33, 27);
+    font-weight: 800;
+}
 .carritoImg {
     width: 70px;
     height: 70px;
@@ -214,11 +234,14 @@ div label:hover {
     width: 20px;
     height: 20px;
     border: 0.5px solid black;
-    margin: 1rem;
+    margin: 1rem 0.25rem 1rem 11rem;
+    
 }
 
 .precio-final {
     text-align: center;
+    font-weight: 1000;
+    color: #000 ;
 }
 
 .valorFinal {
@@ -231,6 +254,10 @@ div label:hover {
     font-size: 30px;
     margin-top: 2rem;
     font-family: "Montserrat", sans-serif;
+}
+.parrafoPagar{
+    font-weight: 1000;
+    color: #000 ;
 }
 
 .cliente {

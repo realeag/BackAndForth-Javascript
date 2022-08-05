@@ -1,3 +1,5 @@
+// PROFE UTILICÉ TANTO EL .JSON CON FETCH COMO EL ARRAY DENTRO DEL CÓDIGO
+
 const productos = [
     {
         id: 1,
@@ -62,6 +64,8 @@ const productos = [
     },
 ];
 
+// creando las tarjetas con fetch sobre .JSON de productos
+
 fetch('js/productos.json')
     .then((response) => response.json())
     .then((data) => {
@@ -75,12 +79,13 @@ fetch('js/productos.json')
             <h5 class="card-title">${producto.nombre}</h5>
             <p class="card-text">$ ${producto.precio}</p>
             <p class="card-text">${producto.descripción}</p>
-            <a class="btn btnCard" role="button" onClick="addCart(${posicion})">COMPRAR</a>
+            <a id="popup" class="btn btnCard" role="button" onClick="addCart(${posicion})">COMPRAR</a>
         </div>
         </div>`
             lista.appendChild(tarjeta);
-        });
+        })
     });
+
 
 
 // carrito en HTML 
@@ -97,15 +102,16 @@ const drawCart = () => {
     if (carrito.length > 0) {
         carrito.forEach((producto, posicion) => {
             subtotal = producto.precio * producto.cantidad;
-            valorFinal += subtotal * iva;
+            // redondeo de subtotal y suma de elementos en valor final
+            valorFinal += (Math.round(subtotal)) * iva;
 
             const agregoCarrito = document.createElement("div");
             agregoCarrito.classList.add("prod-cart", "d-flex", "col-md-11", "col-lg-11", "mb-2");
             agregoCarrito.innerHTML = `<img class="carritoImg" src="${producto.imagen}"/>
-            <div class="carritoDetalles">${producto.nombre}</div>
-            <div class="carritoDetalles">Cantidad: ${producto.cantidad}</div>
-            <div class="carritoDetalles">Precio: $ ${producto.precio}</div>
-            <div class="carritoDetalles">Total: $ ${producto.precio * producto.cantidad}</div>
+            <div class="carritoDetalles prod1">${producto.nombre}</div>
+            <div class="carritoDetalles cant1">Cantidad: ${producto.cantidad}</div>
+            <div class="carritoDetalles precio1">Precio: $ ${producto.precio}</div>
+            <div class="carritoDetalles subtotal1">Subtotal: $ ${producto.precio * producto.cantidad}</div>
             <a class="carritoDetalles" id="remove-producto" onClick="removeProduct(${posicion})"><img class="removeImg" src="./img/trashCan.png"/><a/>`;
 
             carritoHTML.appendChild(agregoCarrito);
@@ -197,7 +203,7 @@ const mensaje = () => {
 
 
     const mensaje = nombreCliente.length > 3 ?
-            (Swal.fire(
+        (Swal.fire(
             'Tu compra fue confirmada!',
             'Gracias por elegir Back&Forth F.C.',
             'success'),
@@ -208,10 +214,11 @@ const mensaje = () => {
             `,
             carritoHTML.innerHTML = datosEnvio) :
 
-            Swal.fire({
+        Swal.fire({
             icon: 'error',
             title: 'Hubo un error!',
-            text: 'Verificá que todos los campos estén completos'},
+            text: 'Verificá que todos los campos estén completos'
+        },
             carritoHTML.innerHTML = "",
             datosEnvio = `<div class="datosEnvios">Por favor, verificá que los datos sean correctos y volvé a ingresarlos.</div>`,
             carritoHTML.innerHTML = datosEnvio)
