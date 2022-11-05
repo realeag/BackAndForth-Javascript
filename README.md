@@ -18,4 +18,4 @@ Sitio e-commerce de artículos deposrtivos vintage
 
 ## Ejecución
 
-[Netlify](https://collectibles-alan-reale.netlify.app/)
+[Netlify](https://backandforth-alan-reale.netlify.app/)
